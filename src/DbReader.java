@@ -27,7 +27,6 @@ public class DbReader {
         }
 
         Person ReadNextPerson() throws SQLException {
-            Integer id = _resultSet.getInt("id");
             String nome = _resultSet.getString("nome");
             String cognome = _resultSet.getString("cognome");
             String indirizzo = _resultSet.getString("indirizzo");
