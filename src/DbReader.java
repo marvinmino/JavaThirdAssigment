@@ -22,7 +22,20 @@ public class DbReader {
         boolean HasOtherPerson() throws SQLException {
             if(_resultSet.next()) {
                return true;
+            }else{
+                if (_resultSet != null) {
+                    _resultSet.close();
+                }
+
+                if (_statement != null) {
+                    _statement.close();
+                }
+
+                if (_connect != null) {
+                    _connect.close();
+                }
             }
+
             return false;
         }
 
